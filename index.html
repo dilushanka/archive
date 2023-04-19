@@ -6,11 +6,43 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <!-- custom css file link  -->
    <link rel="stylesheet" type="text/css" href="css/style.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+   <!--Lightbox-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" integrity="sha512-iX9Htys1Q2wn/kV7NlQ2tezZ7lNwWpYb7bdDR5eX9y7vnjSJrBUaJ5uBDQ2JZAHbP8e14YJ7NX+W5h5rzX7Gcg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" integrity="sha512-EkD/M8b67G+TDaRgKgrCpTYyZhJfAsI6B4+bsERn/4ZvLcB4DdNIsST6/k+9+BbkvN8W50KuyFzsOo3qkxOxgQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+   <!-- IE 11 polyfill for CSS and Custom Properties -->
+   <script
+     nomodule>window.MSInputMethodContext && document.documentMode && document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-ie11@5/css/bootstrap-ie11.min.css"><script src="https://cdn.jsdelivr.net/npm/ie11-custom-properties@4/ie11CustomProperties.min.js"><\/script>');</script>
+ 
+   <link rel="stylesheet" href="css/dark-mode.css">
+   <link href="light/lightbox.css" rel="stylesheet" />
+   <script src="light/lightbox.js"></script>
+   
 
 </head>
-<body>
+<class="bg-white text-center d-flex h-100">
 
-   
+   <div class="container d-flex p-3 mx-auto w-100 flex-column">
+     <header class="mb-auto">
+       <div class="float-md-start fw-bold fs-5">OLD Image</div>
+       <nav class="nav justify-content-center float-md-end">
+         <a class="nav-link active" href="#">Home</a>
+         <a class="nav-link" href="#" target="_blank">GitHub</a>
+         <div class="nav-link">
+ 
+           <div class="form-check form-switch">
+             <input type="checkbox" class="form-check-input" id="darkSwitch">
+             <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+           </div>
+           <script src="js/dark-mode-switch.min.js"></script>
+ 
+         </div>
+       </nav>
+     </header>
+   </div>
+
 <div class="container">
 
    <h1 class="heading">type to search images</h1>
@@ -24,6 +56,7 @@
       <div class="image" data-title="cute">
          <img src="images/cute-1.jpg" alt="" loading="lazy">
          <h3>cute animal</h3>
+         <h4>Gad</h4>
       </div>
 
       <div class="image" data-title="car">
