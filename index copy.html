@@ -7,6 +7,10 @@
    <!-- custom css file link  -->
    <link rel="stylesheet" type="text/css" href="css/style.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+   <!--Lightbox-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" integrity="sha512-iX9Htys1Q2wn/kV7NlQ2tezZ7lNwWpYb7bdDR5eX9y7vnjSJrBUaJ5uBDQ2JZAHbP8e14YJ7NX+W5h5rzX7Gcg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" integrity="sha512-EkD/M8b67G+TDaRgKgrCpTYyZhJfAsI6B4+bsERn/4ZvLcB4DdNIsST6/k+9+BbkvN8W50KuyFzsOo3qkxOxgQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
    <!-- IE 11 polyfill for CSS and Custom Properties -->
    <script
@@ -47,22 +51,20 @@
 
    <div class="image-container">
 
-      <div class="image" data-title="people">
+      <div class="image" data-title="cute">
          <img src="images/cute-1.jpg" alt="" loading="lazy">
-         <h3>People</h3>
-         <h4>Sri Lnakan old peopels</h4>
+         <h3>cute animal</h3>
+         <h4>Gad</h4>
       </div>
 
-      <div class="image" data-title="architecture">
+      <div class="image" data-title="car">
          <img src="images/car-1.jpg" alt="" loading="lazy">
-         <h3>Architecture</h3>
-         <h4>Sri Lnakan old architecture</h4>
+         <h3>modern car</h3>
       </div>
 
-      <div class="image" data-title="Landscape">
+      <div class="image" data-title="food">
          <img src="images/food-1.jpg" alt="" loading="lazy">
-         <h3>Landscape</h3>
-         <h4>Sri Lnakan old Landscape</h4>
+         <h3>tasty food</h3>
       </div>
 
       <div class="image" data-title="city">
@@ -100,67 +102,36 @@
 </div>
 
 <script>
-let searchBox = document.querySelector('#search-box');
-let images = document.querySelectorAll('.container .image-container .image');
-
-searchBox.oninput = () => {
-  let value = searchBox.value.trim().toLowerCase();
-
-  if (value === '') {
-    images.forEach(img => img.style.display = 'block');
-    document.querySelector('#error-message').style.display = 'none';
-  } else {
-    let found = false;
-    images.forEach(img => {
-      let title = img.getAttribute('data-title').toLowerCase();
-      let h3Text = img.querySelector('h3').textContent.toLowerCase();
-      let h4Text = img.querySelector('h4') ? img.querySelector('h4').textContent.toLowerCase() : '';
-      if (title.includes(value) || h3Text.includes(value) || h4Text.includes(value)) {
-        img.style.display = 'block';
-        found = true;
-      } else {
-        img.style.display = 'none';
-      }
-    });
-
-    if (!found) {
-      document.querySelector('#error-message').style.display = 'block';
-    } else {
-      document.querySelector('#error-message').style.display = 'none';
-    }
-  }
-};
-</script>
+   let searchBox = document.querySelector('#search-box');
+   let images = document.querySelectorAll('.container .image-container .image');
    
-
-<footer>
-  <div class="footer-container">
-    <div class="footer-top">
-      <div class="logo">
-        <img src="logo.png" alt="Documentary logo">
-      </div>
-      <div class="menu">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Documentaries</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="social">
-        <ul>
-          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2023 Documentary Website</p>
-    </div>
-  </div>
-</footer>
+   searchBox.oninput = () => {
+     let value = searchBox.value.trim().toLowerCase();
+     
+     if (value === '') {
+       images.forEach(img => img.style.display = 'block');
+       document.querySelector('#error-message').style.display = 'none';
+     } else {
+       let found = false;
+       images.forEach(img => {
+         let title = img.getAttribute('data-title').toLowerCase();
+         if (title.includes(value)) {
+           img.style.display = 'block';
+           found = true;
+         } else {
+           img.style.display = 'none';
+         }
+       });
+       
+       if (!found) {
+         document.querySelector('#error-message').style.display = 'block';
+       } else {
+         document.querySelector('#error-message').style.display = 'none';
+       }
+     }
+   };
+   </script>
+   
 
 </body>
 </html>
