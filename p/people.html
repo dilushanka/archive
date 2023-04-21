@@ -41,6 +41,41 @@
   මෙම වෙබ් අඩවියේ අන්තර්ගත ජායාරූප පිලිබද වගකීමක් අප ලබාගන්නේ නැත. යම් ජායාරූපයක් සදහා කතෲ අයිතිය ලබාගැනීමට හෝ මෙම වෙබ් පිටුවෙන් ඉවත් කරගැනීම සදහා අපව සම්බන්ද කරගන්න.
 </p>
 </div>
+<!--PreLoader-->
+<div class="loader-container">
+  <div class="loader-bar"></div>
+</div>
+<script>
+  // Get the loader bar element
+const loaderBar = document.querySelector('.loader-bar');
+
+// Set the loading progress to 0%
+let progress = 0;
+
+// Update the loader bar width every 100ms
+const intervalId = setInterval(() => {
+  // Increment the progress by a random value between 1 and 5
+  progress += Math.floor(Math.random() * 5) + 1;
+
+  // Clamp the progress to a maximum of 100%
+  if (progress > 100) {
+    progress = 100;
+  }
+
+  // Update the loader bar width
+  loaderBar.style.width = `${progress}%`;
+
+  // If the loading is complete, clear the interval after 1 second
+  if (progress === 100) {
+    setTimeout(() => {
+      clearInterval(intervalId);
+      loaderContainer.style.display = 'none';
+    }, 1000);
+  }
+}, 100);
+
+</script>
+<!--End of PreLoader-->
 <div class="container">
 
    <h1 class="heading">type to search images</h1>
