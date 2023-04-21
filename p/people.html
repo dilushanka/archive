@@ -54,15 +54,15 @@
       <a class="example-image-link" href="img/people/p1-full.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
       <div class="image" data-title="people">
          <img src="img/people/p1-full.jpg" loading="lazy">
+        </a>
          <h3>මිනිසුන්</h3>
          <h4>Sri Lnakan old peopels</h4>
          <div class="icons">
           <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
           <a href="helalk.com" target="_blank"><span> <i class="fas fa-download"></i> Download </span></a>
        </div>
-         
       </div>
-    </a>
+    
     <a class="example-image-link" href="img/people/p1-full.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
       <div class="image" data-title="architecture">
          <img src="img/people/p1-full.jpg" alt="" loading="lazy">
@@ -126,7 +126,7 @@
      </div>
 
    </div>
-   <div id="load-more"> load more </div>
+   <div id="load-more" class="l-btn"> load more </div>
    
 </div>
 
@@ -135,22 +135,28 @@ let searchBox=document.querySelector("#search-box"),images=document.querySelecto
 </script>
 <script src="js/lightbox-plus-jquery.js"></script>
 <script>
+let loadMoreBtn = document.querySelector('#load-more');
+let currentItem = 6;
 
-  let loadMoreBtn = document.querySelector('#load-more');
-  let currentItem = 3;
-  
-  loadMoreBtn.onclick = () =>{
-     let imagees = [...document.querySelectorAll('.container .image-container .image')];
-     for (var i = currentItem; i < currentItem + 3; i++){
-        imagees[i].style.display = 'inline-block';
-     }
-     currentItem += 3;
-  
-     if(currentItem >= imagees.length){
-        loadMoreBtn.style.display = 'none';
-     }
-  }
-  
+loadMoreBtn.onclick = () =>{
+  let imagees = [...document.querySelectorAll('.container .image-container .image')];
+  let btnText = loadMoreBtn.innerHTML;
+  loadMoreBtn.innerHTML = 'Loading...';
+  loadMoreBtn.classList.add('loading');
+  setTimeout(() => {
+    for (var i = currentItem; i < currentItem + 3; i++){
+      imagees[i].style.display = 'inline-block';
+    }
+    currentItem += 3;
+
+    if(currentItem >= imagees.length){
+      loadMoreBtn.style.display = 'none';
+    }
+    loadMoreBtn.classList.remove('loading');
+    loadMoreBtn.innerHTML = btnText;
+  }, 1000);
+}
+
   </script>
    
 
