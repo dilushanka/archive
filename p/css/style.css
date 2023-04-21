@@ -130,6 +130,9 @@
   .container .image-container .image{
     width: 100%;
   }
+  .container .image-container .image .icons span{
+    font-size: 12px;
+  }
 }
 #error-message {
   display: none;
