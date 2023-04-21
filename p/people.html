@@ -10,6 +10,8 @@
    <!-- IE 11 polyfill for CSS and Custom Properties -->
    <script
      nomodule>window.MSInputMethodContext && document.documentMode && document.write('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-ie11@5/css/bootstrap-ie11.min.css"><script src="https://cdn.jsdelivr.net/npm/ie11-custom-properties@4/ie11CustomProperties.min.js"><\/script>');</script>
+        <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
    <link rel="stylesheet" href="css/dark-mode.css">
    <link rel="stylesheet" href="css/lightbox.css">
    
@@ -54,6 +56,11 @@
          <img src="img/people/p1-full.jpg" loading="lazy">
          <h3>මිනිසුන්</h3>
          <h4>Sri Lnakan old peopels</h4>
+         <div class="icons">
+          <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
+          <span> <i class="fas fa-download"></i> Download </span>
+       </div>
+         
       </div>
     </a>
     <a class="example-image-link" href="img/people/p1-full.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
@@ -62,12 +69,12 @@
          <h3>ගෘහ නිර්මාණ</h3>
          <h4>Sri Lnakan old architecture</h4>
       </div></a>
-
+      <a class="example-image-link" href="img/people/p1-full.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
       <div class="image" data-title="Landscape">
          <img src="img/people/p1-full.jpg" alt="" loading="lazy">
          <h3>භූ දර්ශනය</h3>
          <h4>Sri Lnakan old Landscape</h4>
-      </div>
+      </div></a>
 
       <div class="image" data-title="Ruins">
          <img src="images/ruins.jpg" alt="" loading="lazy">
@@ -93,41 +100,37 @@
          <h4>Sri Lnakan old Occupational</h4>
       </div>
 
+      
+      <div class="image" data-title="Ruins">
+        <img src="images/ruins.jpg" alt="" loading="lazy">
+        <h3>නටඹුන්</h3>
+        <h4>Sri Lnakan old Ruins</h4>
+     </div>
+
+     <div class="image" data-title="Natural History">
+        <img src="images/natu.jpg" alt="" loading="lazy">
+        <h3>ස්වාභාවික</h3>
+        <h4>Sri Lnakan old Natural History</h4>
+     </div>
+
+     <div class="image" data-title="Transport">
+        <img src="images/trans.jpg" alt="" loading="lazy">
+        <h3>ගමනාගමනය</h3>
+        <h4>Sri Lnakan old Transport</h4>
+     </div>
+
+     <div class="image" data-title="Occupational">
+        <img src="images/occupational.jpg" alt="" loading="lazy">
+        <h3>ජීවනෝපාය</h3>
+        <h4>Sri Lnakan old Occupational</h4>
+     </div>
+
    </div>
 
 </div>
 
 <script>
-let searchBox = document.querySelector('#search-box');
-let images = document.querySelectorAll('.container .image-container .image');
-
-searchBox.oninput = () => {
-  let value = searchBox.value.trim().toLowerCase();
-
-  if (value === '') {
-    images.forEach(img => img.style.display = 'block');
-    document.querySelector('#error-message').style.display = 'none';
-  } else {
-    let found = false;
-    images.forEach(img => {
-      let title = img.getAttribute('data-title').toLowerCase();
-      let h3Text = img.querySelector('h3').textContent.toLowerCase();
-      let h4Text = img.querySelector('h4') ? img.querySelector('h4').textContent.toLowerCase() : '';
-      if (title.includes(value) || h3Text.includes(value) || h4Text.includes(value)) {
-        img.style.display = 'block';
-        found = true;
-      } else {
-        img.style.display = 'none';
-      }
-    });
-
-    if (!found) {
-      document.querySelector('#error-message').style.display = 'block';
-    } else {
-      document.querySelector('#error-message').style.display = 'none';
-    }
-  }
-};
+let searchBox=document.querySelector("#search-box"),images=document.querySelectorAll(".container .image-container .image");searchBox.oninput=()=>{let e=searchBox.value.trim().toLowerCase();if(""===e)images.forEach(e=>e.style.display="block"),document.querySelector("#error-message").style.display="none";else{let t=!1;images.forEach(r=>{let o=r.getAttribute("data-title").toLowerCase(),l=r.querySelector("h3").textContent.toLowerCase(),s=r.querySelector("h4")?r.querySelector("h4").textContent.toLowerCase():"";o.includes(e)||l.includes(e)||s.includes(e)?(r.style.display="block",t=!0):r.style.display="none"}),t?document.querySelector("#error-message").style.display="none":document.querySelector("#error-message").style.display="block"}};
 </script>
 <script src="js/lightbox-plus-jquery.js"></script>
    

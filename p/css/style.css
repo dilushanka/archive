@@ -43,7 +43,8 @@
 }
 
 .container .image-container .image{
-  padding:15px;
+  padding:45px;
+
   background-color: #fff;
   box-shadow: 0 5px 10px rgba(0,0,0,.1);
   border:2px solid #000;
@@ -54,6 +55,25 @@
 .container .image-container .image:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.container .image-container .image .icons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top:1px solid #334;
+}
+
+.container .image-container .image .icons span{
+  font-size: 14px;
+  color:#777;
+}
+
+.container .image-container .image .icons span i{
+  color:crimson;
+  padding-right: 5px;
 }
 
 .main-pa {

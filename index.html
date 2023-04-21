@@ -52,44 +52,44 @@
       <div class="image" data-title="people">
          <img src="images/people.jpg" alt="" loading="lazy">
          <h3>මිනිසුන්</h3>
-         <h4>Sri Lnakan old peopels</h4>
+         <h4>Sri Lankan old peopels</h4>
       </div>
     </a>
 
       <div class="image" data-title="architecture">
          <img src="images/archi.jpg" alt="" loading="lazy">
          <h3>ගෘහ නිර්මාණ</h3>
-         <h4>Sri Lnakan old architecture</h4>
+         <h4>Sri Lankan old architecture</h4>
       </div>
 
       <div class="image" data-title="Landscape">
          <img src="images/landscape.jpg" alt="" loading="lazy">
          <h3>භූ දර්ශනය</h3>
-         <h4>Sri Lnakan old Landscape</h4>
+         <h4>Sri Lankan old Landscape</h4>
       </div>
 
       <div class="image" data-title="Ruins">
          <img src="images/ruins.jpg" alt="" loading="lazy">
          <h3>නටඹුන්</h3>
-         <h4>Sri Lnakan old Ruins</h4>
+         <h4>Sri Lankan old Ruins</h4>
       </div>
 
       <div class="image" data-title="Natural History">
          <img src="images/natu.jpg" alt="" loading="lazy">
          <h3>ස්වාභාවික</h3>
-         <h4>Sri Lnakan old Natural History</h4>
+         <h4>Sri Lankan old Natural History</h4>
       </div>
 
       <div class="image" data-title="Transport">
          <img src="images/trans.jpg" alt="" loading="lazy">
          <h3>ගමනාගමනය</h3>
-         <h4>Sri Lnakan old Transport</h4>
+         <h4>Sri Lankan old Transport</h4>
       </div>
 
       <div class="image" data-title="Occupational">
          <img src="images/occupational.jpg" alt="" loading="lazy">
          <h3>ජීවනෝපාය</h3>
-         <h4>Sri Lnakan old Occupational</h4>
+         <h4>Sri Lankan old Occupational</h4>
       </div>
 
    </div>
@@ -97,36 +97,7 @@
 </div>
 
 <script>
-let searchBox = document.querySelector('#search-box');
-let images = document.querySelectorAll('.container .image-container .image');
-
-searchBox.oninput = () => {
-  let value = searchBox.value.trim().toLowerCase();
-
-  if (value === '') {
-    images.forEach(img => img.style.display = 'block');
-    document.querySelector('#error-message').style.display = 'none';
-  } else {
-    let found = false;
-    images.forEach(img => {
-      let title = img.getAttribute('data-title').toLowerCase();
-      let h3Text = img.querySelector('h3').textContent.toLowerCase();
-      let h4Text = img.querySelector('h4') ? img.querySelector('h4').textContent.toLowerCase() : '';
-      if (title.includes(value) || h3Text.includes(value) || h4Text.includes(value)) {
-        img.style.display = 'block';
-        found = true;
-      } else {
-        img.style.display = 'none';
-      }
-    });
-
-    if (!found) {
-      document.querySelector('#error-message').style.display = 'block';
-    } else {
-      document.querySelector('#error-message').style.display = 'none';
-    }
-  }
-};
+let searchBox=document.querySelector("#search-box"),images=document.querySelectorAll(".container .image-container .image");searchBox.oninput=()=>{let e=searchBox.value.trim().toLowerCase();if(""===e)images.forEach(e=>e.style.display="block"),document.querySelector("#error-message").style.display="none";else{let t=!1;images.forEach(r=>{let o=r.getAttribute("data-title").toLowerCase(),l=r.querySelector("h3").textContent.toLowerCase(),s=r.querySelector("h4")?r.querySelector("h4").textContent.toLowerCase():"";o.includes(e)||l.includes(e)||s.includes(e)?(r.style.display="block",t=!0):r.style.display="none"}),t?document.querySelector("#error-message").style.display="none":document.querySelector("#error-message").style.display="block"}};
 </script>
    
 
