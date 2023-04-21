@@ -44,13 +44,13 @@
 
 .container .image-container .image{
   padding:45px;
-
   background-color: #fff;
   box-shadow: 0 5px 10px rgba(0,0,0,.1);
   border:2px solid #000;
   width: 350px;
   border-radius: 5px;
   animation: fadeIn .2s linear;
+  display: none;
 }
 .container .image-container .image:hover {
   transform: scale(1.05);
@@ -106,6 +106,14 @@
   font-size: 15px;
   color: #000;
 }
+.container .image-container .image:nth-child(1),
+.container .image-container .image:nth-child(2),
+.container .image-container .image:nth-child(3),
+.container .image-container .image:nth-child(4),
+.container .image-container .image:nth-child(5),
+.container .image-container .image:nth-child(6){
+  display: inline-block;
+}
 
 @media (max-width:768px){
   .container #search-box{
@@ -130,6 +138,22 @@
   font-weight: bold;
   text-align: center;
   margin-top: 20px;
+}
+#load-more{
+  margin-top: 20px;
+  display: inline-block;
+  padding:13px 30px;
+  border:1px solid #334;
+  color:#334;
+  font-size: 16px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+#load-more:hover{
+  background-color: crimson;
+  border-color: crimson;
+  color:#fff;
 }
 
 footer {

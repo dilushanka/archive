@@ -58,7 +58,7 @@
          <h4>Sri Lnakan old peopels</h4>
          <div class="icons">
           <span> <i class="fas fa-calendar"></i> 21st may, 2022 </span>
-          <span> <i class="fas fa-download"></i> Download </span>
+          <a href="helalk.com" target="_blank"><span> <i class="fas fa-download"></i> Download </span></a>
        </div>
          
       </div>
@@ -126,13 +126,32 @@
      </div>
 
    </div>
-
+   <div id="load-more"> load more </div>
+   
 </div>
 
 <script>
 let searchBox=document.querySelector("#search-box"),images=document.querySelectorAll(".container .image-container .image");searchBox.oninput=()=>{let e=searchBox.value.trim().toLowerCase();if(""===e)images.forEach(e=>e.style.display="block"),document.querySelector("#error-message").style.display="none";else{let t=!1;images.forEach(r=>{let o=r.getAttribute("data-title").toLowerCase(),l=r.querySelector("h3").textContent.toLowerCase(),s=r.querySelector("h4")?r.querySelector("h4").textContent.toLowerCase():"";o.includes(e)||l.includes(e)||s.includes(e)?(r.style.display="block",t=!0):r.style.display="none"}),t?document.querySelector("#error-message").style.display="none":document.querySelector("#error-message").style.display="block"}};
 </script>
 <script src="js/lightbox-plus-jquery.js"></script>
+<script>
+
+  let loadMoreBtn = document.querySelector('#load-more');
+  let currentItem = 3;
+  
+  loadMoreBtn.onclick = () =>{
+     let imagees = [...document.querySelectorAll('.container .image-container .image')];
+     for (var i = currentItem; i < currentItem + 3; i++){
+        imagees[i].style.display = 'inline-block';
+     }
+     currentItem += 3;
+  
+     if(currentItem >= imagees.length){
+        loadMoreBtn.style.display = 'none';
+     }
+  }
+  
+  </script>
    
 
 <footer>
